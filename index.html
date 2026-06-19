@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3ece1">
+    <title>Inspire Me</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f3ece1'/%3E%3Cpath d='M17 38c14-24 29-24 30-4-7-4-14-1-21 9 2-8-1-11-9-5Z' fill='%23344f50'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..760,0..100,0..1&family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas id="atmosphere" aria-hidden="true"></canvas>
+
+    <main class="experience" aria-label="Inspiration word stream">
+      <section class="word-stage" aria-live="off">
+        <div class="word-frame" aria-hidden="true">
+          <span class="word-layer is-active" data-word-layer></span>
+          <span class="word-layer" data-word-layer></span>
+        </div>
+        <p class="screen-reader-word" id="spoken-word"></p>
+      </section>
+
+      <footer class="controls" id="controls" aria-label="Playback controls">
+        <button class="icon-button" id="play-toggle" type="button" aria-label="Pause" title="Pause">
+          <span class="pause-icon" aria-hidden="true"></span>
+        </button>
+
+        <div class="pace-readout" aria-label="Current word interval">
+          <span>dt</span>
+          <output id="dt-readout">1.65s</output>
+        </div>
+
+        <button class="icon-button" id="skip-word" type="button" aria-label="Next word" title="Next word">
+          <span class="skip-icon" aria-hidden="true"></span>
+        </button>
+
+        <label class="range-control">
+          <span>Tempo</span>
+          <input id="tempo-control" type="range" min="0" max="100" value="48" step="1" aria-label="Average word tempo">
+        </label>
+
+        <label class="range-control">
+          <span>Rate</span>
+          <input id="rate-control" type="range" min="0" max="100" value="36" step="1" aria-label="Word timing sine frequency">
+        </label>
+
+        <label class="range-control">
+          <span>Style</span>
+          <input id="style-control" type="range" min="0" max="100" value="42" step="1" aria-label="Typography sine frequency">
+        </label>
+
+        <label class="range-control">
+          <span>Depth</span>
+          <input id="depth-control" type="range" min="0" max="100" value="64" step="1" aria-label="Sine wave depth">
+        </label>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
